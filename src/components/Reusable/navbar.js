@@ -4,17 +4,11 @@ import logo from "../../images/rishabh.jpeg"
 import { Link } from "@reach/router"
 import M from "materialize-css" 
 
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
 
 class Navbar extends Component {
   componentDidMount() {
-    var elems = document.querySelectorAll(".sidenav")
-    M.Sidenav.init(elems, {})
-    var elem = document.querySelectorAll('.materialboxed');
-    M.Materialbox.init(elem, {});
+    M.Sidenav.init(this.Navbar, {})
+    M.Materialbox.init(this.materialboxed, {});
   }
   render() {
     return (
@@ -23,6 +17,9 @@ class Navbar extends Component {
           id="slide-out"
           class="sidenav"
           style={{ backgroundColor: "rgb(255,255,255,0.8)" }}
+          ref = {Navbar => {
+            this.Navbar = Navbar
+          }}
         >
           <li>
             <div class="user-view">
@@ -30,7 +27,9 @@ class Navbar extends Component {
                 <img src={boy} alt="goes here"/>
               </div>
               <a href="#user">
-                <img class="circle materialboxed"  width="650" src={logo}  alt="goes here" />
+                <img class="circle materialboxed"  width="650" src={logo}  alt="goes here" ref = {materialboxed => {
+                  this.materialboxed = materialboxed
+                }}/>
               </a>
               <a href="#name">
                 <span class="white-text name">Rishabh Jain</span>

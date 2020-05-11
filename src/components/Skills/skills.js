@@ -1,10 +1,7 @@
 import React, { Component } from "react"
 import Heading from "../Reusable/heading"
-import M from "materialize-css" 
+import M from "materialize-css"
 
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
 const filtercategory = items => {
   let holditems = items.map(items => {
     return items.node.category
@@ -14,7 +11,6 @@ const filtercategory = items => {
   categories = [...categories]
   return categories
 }
-
 
 class Skills extends Component {
   constructor(props) {
@@ -26,15 +22,19 @@ class Skills extends Component {
     }
   }
   componentDidMount() {
-    var elems = document.querySelectorAll(".collapsible")
-    M.Collapsible.init(elems, {})
+    M.Collapsible.init(this.collapsible, {})
   }
   render() {
     return (
       <section id="skills">
         <div className="container view">
           <Heading title="Skills" />
-          <ul class="collapsible popout">
+          <ul
+            class="collapsible popout"
+            ref={collapsible => {
+              this.collapsible = collapsible
+            }}
+          >
             {this.state.mycategories.map((category, index) => {
               let holdskill = this.state.skills.filter(
                 ({ node }) => node.category === category
@@ -58,7 +58,7 @@ class Skills extends Component {
                   </div>
                   {titles.map((name, index) => {
                     return (
-                      <div class="collapsible-body" key={index} >
+                      <div class="collapsible-body" key={index}>
                         <span class="skilldescription">{name}</span>
                       </div>
                     )

@@ -6,16 +6,10 @@ import icon4 from "../../images/social/twitter.png"
 import logo2 from "../../images/contact.svg"
 import M from "materialize-css" 
 
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
-
 class Contact extends Component {
   
   componentDidMount() { 
-    var elems = document.querySelectorAll(".modal")
-    M.Modal.init(elems, {})
+    M.Modal.init(this.Modal, {})
   }
   render() {
     return (
@@ -37,7 +31,9 @@ class Contact extends Component {
             </a>
           </div>
         </div>
-        <div id="modal1" class="modal bottom-sheet">
+        <div id="modal1" class="modal bottom-sheet" ref={Modal => {
+          this.Modal = Modal;
+        }}>
           <div class="modal-content">
             <h4>Contact</h4>
             <ul class="collection">
