@@ -28,7 +28,7 @@ class Achievments extends Component {
             {this.state.gallery.map(({ node }) => {
               return (
                 <li key={node.id}>
-                  <Img fluid={node.image.fluid} />
+                  <Img sizes={node.image.sizes} />
                   <div class="caption center-align">
                     <h3>{node.title}</h3>
                     <h5 class="light grey-text text-lighten-3">
@@ -57,8 +57,8 @@ export const query = graphql`
           title
           descriptionon
           image {
-            fluid(maxWidth:2080,maxHeight:786){
-              ...GatsbyContentfulFluid_tracedSVG
+            sizes(maxWidth:2080,maxHeight:786){
+              ...GatsbyContentfulSizes_tracedSVG
             }
           }
         }
