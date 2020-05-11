@@ -5,7 +5,7 @@ import icon3 from "../../images/social/linkedin.png"
 import icon4 from "../../images/social/twitter.png"
 import logo2 from "../../images/contact.svg"
 import M from "materialize-css" 
-
+import { Helmet } from 'react-helmet'
 class Contact extends Component {
   constructor(props) {
     super(props)
@@ -29,6 +29,12 @@ class Contact extends Component {
   render() {
     return (
       <div className="container">
+          <Helmet>
+            <html lang="fr" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+          </Helmet>
         <div
           className="row "
           style={{ paddingTop: "8.5rem", paddingBottom: "8.5rem" }}

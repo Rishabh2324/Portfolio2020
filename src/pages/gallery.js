@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import M from "materialize-css"
+import { Helmet } from 'react-helmet'
+
 
 class Achievments extends Component {
   constructor(props) {
@@ -30,6 +32,13 @@ class Achievments extends Component {
   render() {
     return (
       <Layout>
+        <Helmet>
+            <html lang="fr" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link rel="icon" type="image/png" href="/favicon.png" />
+          </Helmet>
         <div className="container view">
           <Heading title="Gallery" />
           <div

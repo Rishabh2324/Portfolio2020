@@ -14,6 +14,8 @@ import "./layout.css"
 
 import "materialize-css/dist/js/materialize.min.js"
 import Particles from "react-particles-js"
+import { Helmet } from 'react-helmet'
+
 
 const Layout = ({ children }) => {
   return (
@@ -116,6 +118,13 @@ const Layout = ({ children }) => {
         }}
       />
       {children}
+      <Helmet>
+            <html lang="fr" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link rel="icon" type="image/png" href="/favicon.png" />
+          </Helmet>
       <Footer />
     </div>
   )

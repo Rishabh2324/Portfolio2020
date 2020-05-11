@@ -10,6 +10,9 @@ import Discussion from "../components/About /discussion"
 import Contact from "../components/Contact/contact"
 import Aos from "aos"
 import "aos/dist/aos.css"
+import { Helmet } from 'react-helmet'
+
+
 
 const IndexPage = ({ data }) => {
   useEffect(() => {
@@ -18,6 +21,13 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+            <html lang="fr" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link rel="icon" type="image/png" href="/favicon.png" />
+          </Helmet>
       <SEO title="Rishabh Jain" />
       <Intro />
       <div data-aos="fade-down">

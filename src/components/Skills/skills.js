@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import Heading from "../Reusable/heading"
 import M from "materialize-css"
+import { Helmet } from 'react-helmet'
+
 
 const filtercategory = items => {
   let holditems = items.map(items => {
@@ -38,6 +40,13 @@ class Skills extends Component {
   render() {
     return (
       <section id="skills">
+        <Helmet>
+            <html lang="fr" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link rel="icon" type="image/png" href="/favicon.png" />
+          </Helmet>
         <div className="container view">
           <Heading title="Skills" />
           <ul
