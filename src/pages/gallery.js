@@ -3,10 +3,7 @@ import Heading from "../components/Reusable/heading"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
+import M from "materialize-css" 
 
 class Achievments extends Component {
   constructor(props) {
@@ -19,7 +16,7 @@ class Achievments extends Component {
 
   componentDidMount() {
     var elems = document.querySelectorAll(".slider")
-    window.M.Slider.init(elems, {})
+    M.Slider.init(elems, {})
   }
   render() {
     return (
