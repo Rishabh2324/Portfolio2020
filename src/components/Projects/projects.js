@@ -22,7 +22,7 @@ class Projects extends Component {
                 <div className="col s12 m6 l6 xl3" key={node.id}>
                   <div data-aos="flip-in" class="card hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <Img class="activator" fluid={node.image.fluid} />
+                      <Img class="activator" sizes={node.image.sizes} />
                     </div>
                     <div class="card-content">
                       <span class="card-title activator">

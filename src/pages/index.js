@@ -56,8 +56,8 @@ export const query = graphql`
           description
           link
           image {
-            fluid(maxWidth: 300, maxHeight: 200, quality: 100) {
-              ...GatsbyContentfulFluid_tracedSVG
+            sizes(maxWidth: 300,maxHeight: 200) {
+              ...GatsbyContentfulSizes_tracedSVG
             }
           }
         }
@@ -81,8 +81,8 @@ export const query = graphql`
           description
           link
           image {
-            fluid(maxWidth: 300, maxHeight: 200, quality: 100) {
-              ...GatsbyContentfulFluid_tracedSVG
+            sizes(maxWidth: 300,maxHeight: 200) {
+              ...GatsbyContentfulSizes_tracedSVG
             }
           }
         }

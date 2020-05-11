@@ -21,7 +21,7 @@ class Experience extends Component {
                 <div className="col s12 m6 l6 xl3" key={node.id} >
                   <div class="card hoverable">
                     <div class="card-image  waves-effect waves-block">
-                      <Img className="acti" fluid={node.image.fluid} />
+                      <Img className="acti" sizes={node.image.sizes} />
                     </div>
                     <div class="card-stacked">
                       <div class="card-content">
