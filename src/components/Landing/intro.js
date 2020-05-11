@@ -3,6 +3,7 @@ import Heading from "../Reusable/heading"
 import boy from "../../images/boy.svg"
 import Typical from "react-typical"
 import Aos from "aos"
+
 function Intro() {
   useEffect(() => {
     Aos.init({ duration: 2000 })

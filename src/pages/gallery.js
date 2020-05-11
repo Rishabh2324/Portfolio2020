@@ -3,7 +3,7 @@ import Heading from "../components/Reusable/heading"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import M from "materialize-css" 
+import M from "materialize-css"
 
 class Achievments extends Component {
   constructor(props) {
@@ -15,32 +15,36 @@ class Achievments extends Component {
   }
 
   componentDidMount() {
+    if (typeof window !== "undefined") {
+      require("materialize-css/dist/js/materialize.min.js")
+    }
+
     var elems = document.querySelectorAll(".slider")
     M.Slider.init(elems, {})
   }
   render() {
     return (
       <Layout>
-      <div className="container view">
-        <Heading title="Gallery" />
-        <div class="slider">
-          <ul class="slides">
-            {this.state.gallery.map(({ node }) => {
-              return (
-                <li key={node.id}>
-                  <Img sizes={node.image.sizes} />
-                  <div class="caption center-align">
-                    <h3>{node.title}</h3>
-                    <h5 class="light grey-text text-lighten-3">
-                      {node.descriptionon}
-                    </h5>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+        <div className="container view">
+          <Heading title="Gallery" />
+          <div class="slider">
+            <ul class="slides">
+              {this.state.gallery.map(({ node }) => {
+                return (
+                  <li key={node.id}>
+                    <Img sizes={node.image.sizes} />
+                    <div class="caption center-align">
+                      <h3>{node.title}</h3>
+                      <h5 class="light grey-text text-lighten-3">
+                        {node.descriptionon}
+                      </h5>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
       </Layout>
     )
   }
@@ -57,7 +61,7 @@ export const query = graphql`
           title
           descriptionon
           image {
-            sizes(maxWidth:2080,maxHeight:786){
+            sizes(maxWidth: 2080, maxHeight: 786) {
               ...GatsbyContentfulSizes_tracedSVG
             }
           }
