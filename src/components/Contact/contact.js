@@ -6,15 +6,14 @@ import icon4 from "../../images/social/twitter.png"
 import logo2 from "../../images/contact.svg"
 import M from "materialize-css" 
 
-
+if (typeof window !== "undefined") {
+  require("materialize-css/dist/js/materialize.min.js")
+}
 
 
 class Contact extends Component {
   
   componentDidMount() { 
-    if (typeof window !== "undefined") {
-      require("materialize-css/dist/js/materialize.min.js")
-    }
     var elems = document.querySelectorAll(".modal")
     M.Modal.init(elems, {})
   }

@@ -4,14 +4,13 @@ import logo from "../../images/rishabh.jpeg"
 import { Link } from "@reach/router"
 import M from "materialize-css" 
 
-
+if (typeof window !== "undefined") {
+  require("materialize-css/dist/js/materialize.min.js")
+}
 
 
 class Navbar extends Component {
   componentDidMount() {
-    if (typeof window !== "undefined") {
-      require("materialize-css/dist/js/materialize.min.js")
-    }
     var elems = document.querySelectorAll(".sidenav")
     M.Sidenav.init(elems, {})
     var elem = document.querySelectorAll('.materialboxed');
