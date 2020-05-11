@@ -6,10 +6,27 @@ import M from "materialize-css"
 
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      width: 0, // or your default width here
+    }
+  }
   componentDidMount() {
+    this.handleWindowSizeChange() // Set width
+    window.addEventListener('resize', this.handleWindowSizeChange)
     M.Sidenav.init(this.Navbar, {})
     M.Materialbox.init(this.materialboxed, {});
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
+  }
+  
   render() {
     return (
       <section>

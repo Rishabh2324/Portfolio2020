@@ -16,13 +16,24 @@ class Skills extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      width: 0, // or your default width here
       totalitem: [],
       skills: props.skill.edges,
       mycategories: filtercategory(props.skill.edges),
     }
   }
   componentDidMount() {
+    this.handleWindowSizeChange() // Set width
+    window.addEventListener('resize', this.handleWindowSizeChange)
     M.Collapsible.init(this.collapsible, {})
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
   }
   render() {
     return (

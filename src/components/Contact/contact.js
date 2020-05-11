@@ -7,9 +7,24 @@ import logo2 from "../../images/contact.svg"
 import M from "materialize-css" 
 
 class Contact extends Component {
-  
-  componentDidMount() { 
+  constructor(props) {
+    super(props)
+    this.state = {
+      width: 0, // or your default width here
+    }
+  }
+  componentDidMount() {
+    this.handleWindowSizeChange() // Set width
+    window.addEventListener('resize', this.handleWindowSizeChange)
     M.Modal.init(this.Modal, {})
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
   }
   render() {
     return (

@@ -11,11 +11,21 @@ class Achievments extends Component {
 
     this.state = {
       gallery: props.achivement.edges,
+      width: 0, // or your default width here
     }
   }
-
   componentDidMount() {
+    this.handleWindowSizeChange() // Set width
+    window.addEventListener("resize", this.handleWindowSizeChange)
     M.Slider.init(this.slider, {})
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
   }
   render() {
     return (
