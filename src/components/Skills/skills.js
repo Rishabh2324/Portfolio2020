@@ -1,10 +1,6 @@
 import React, { Component } from "react"
 import Heading from "../Reusable/heading"
-
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
+import M from "materialize-css" 
 const filtercategory = items => {
   let holditems = items.map(items => {
     return items.node.category
@@ -25,7 +21,7 @@ class Skills extends Component {
   }
   componentDidMount() {
     var elems = document.querySelectorAll(".collapsible")
-    window.M.Collapsible.init(elems, {})
+    M.Collapsible.init(elems, {})
   }
   render() {
     return (

@@ -4,11 +4,12 @@ import icon2 from "../../images/social/instagram.png"
 import icon3 from "../../images/social/linkedin.png"
 import icon4 from "../../images/social/twitter.png"
 import logo2 from "../../images/contact.svg"
+import M from "materialize-css" 
 class Contact extends Component {
 
   componentDidMount() { 
     var elems = document.querySelectorAll(".modal")
-    window.M.Modal.init(elems, {})
+    M.Modal.init(elems, {})
   }
   render() {
     return (

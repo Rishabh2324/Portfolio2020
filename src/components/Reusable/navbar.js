@@ -2,16 +2,13 @@ import React, { Component } from "react"
 import boy from "../../images/back.jpg"
 import logo from "../../images/rishabh.jpeg"
 import { Link } from "@reach/router"
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
+import M from "materialize-css" 
 class Navbar extends Component {
   componentDidMount() {
     var elems = document.querySelectorAll(".sidenav")
-    window.M.Sidenav.init(elems, {})
+    M.Sidenav.init(elems, {})
     var elem = document.querySelectorAll('.materialboxed');
-    window.M.Materialbox.init(elem, {});
+    M.Materialbox.init(elem, {});
   }
   render() {
     return (
