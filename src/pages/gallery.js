@@ -14,7 +14,8 @@ class Achievments extends Component {
       gallery: props.achivement.edges,
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const M = await import('materialize-css')
     M.Slider.init(this.slider, {})
   }
   render() {

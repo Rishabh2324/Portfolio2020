@@ -16,7 +16,7 @@ import Particles from "react-particles-js"
 const Layout = ({ children }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <Particles
         canvasClassName="example"
         params={{

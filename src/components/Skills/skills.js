@@ -20,7 +20,8 @@ class Skills extends Component {
       mycategories: filtercategory(props.skill.edges),
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const M = await import('materialize-css')
     M.Collapsible.init(this.collapsible, {})
   }
 

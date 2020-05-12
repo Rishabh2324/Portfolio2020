@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import boy from "../../images/back.jpg"
 import logo from "../../images/rishabh.jpeg"
-import { Link } from "@reach/router"
-import M from "materialize-css" 
+import { Link } from "@reach/router" 
 
 
 class Navbar extends Component {
@@ -11,7 +10,8 @@ class Navbar extends Component {
     this.state = {
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const M = await import('materialize-css')
     M.Sidenav.init(this.Navbar, {})
     M.Materialbox.init(this.materialboxed, {});
   }

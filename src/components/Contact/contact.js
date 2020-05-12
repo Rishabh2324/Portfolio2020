@@ -4,14 +4,15 @@ import icon2 from "../../images/social/instagram.png"
 import icon3 from "../../images/social/linkedin.png"
 import icon4 from "../../images/social/twitter.png"
 import logo2 from "../../images/contact.svg"
-import M from "materialize-css" 
+ 
 class Contact extends Component {
   constructor(props) {
     super(props)
     this.state = {
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const M = await import('materialize-css')
     M.Modal.init(this.Modal, {})
   }
 
