@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Navbar from "../components/Reusable/navbar"
 import Footer from "../components/Reusable/footer"
-import "materialize-css/dist/css/materialize.min.css"
+
 import "./layout.css"
 import Particles from "react-particles-js"
 
