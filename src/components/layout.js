@@ -11,8 +11,6 @@ import Navbar from "../components/Reusable/navbar"
 import Footer from "../components/Reusable/footer"
 import "materialize-css/dist/css/materialize.min.css"
 import "./layout.css"
-
-import "materialize-css/dist/js/materialize.min.js"
 import Particles from "react-particles-js"
 
 

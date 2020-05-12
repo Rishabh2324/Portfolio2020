@@ -4,7 +4,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         module: {
           rules: [
             {
-              test: /materialize.js/,
+              test: /materialize.min.js/,
               use: loaders.null(),
             },
           ],

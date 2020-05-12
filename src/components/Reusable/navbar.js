@@ -3,7 +3,7 @@ import boy from "../../images/back.jpg"
 import logo from "../../images/rishabh.jpeg"
 import { Link } from "@reach/router"
 import M from "materialize-css" 
-import { Helmet } from 'react-helmet'
+
 
 class Navbar extends Component {
   constructor(props) {
@@ -16,16 +16,9 @@ class Navbar extends Component {
     M.Materialbox.init(this.materialboxed, {});
   }
   
-  render() {
+    render() {
     return (
       <section>
-        <Helmet>
-            <html lang="fr" />
-            <meta charSet="utf-8" />
-            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <link rel="icon" type="image/png" href="/favicon.png" />
-          </Helmet>
         <ul
           id="slide-out"
           class="sidenav"
