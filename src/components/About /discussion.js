@@ -4,7 +4,6 @@ import Description from "../Reusable/description"
 class Discussion extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       about: props.about.edges,
     }
@@ -20,7 +19,7 @@ class Discussion extends Component {
               <Description key={node.id} description={node.description.description}/> 
             )
           })}
-        </div>
+        </div>  
       </section>
     )
   }

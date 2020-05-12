@@ -1,7 +1,7 @@
 import React, { Component  } from "react"
 import Heading from "../Reusable/heading"
 import Img from "gatsby-image"
-import { Helmet } from 'react-helmet'
+
 class Experience extends Component {
   constructor(props) {
     super(props)
@@ -13,13 +13,6 @@ class Experience extends Component {
   render() {
     return (
       <section id="experience">
-          <Helmet>
-            <html lang="fr" />
-            <meta charSet="utf-8" />
-            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <link rel="icon" type="image/png" href="/favicon.png" />
-          </Helmet>
         <div className="container ">
           <Heading title="Experience" />
           <div className="row">

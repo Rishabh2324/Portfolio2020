@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import Heading from "../Reusable/heading"
 import M from "materialize-css"
-import { Helmet } from 'react-helmet'
-
 
 const filtercategory = items => {
   let holditems = items.map(items => {
@@ -18,35 +16,19 @@ class Skills extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      width: 0, // or your default width here
       totalitem: [],
       skills: props.skill.edges,
       mycategories: filtercategory(props.skill.edges),
     }
   }
   componentDidMount() {
-    this.handleWindowSizeChange() // Set width
-    window.addEventListener('resize', this.handleWindowSizeChange)
     M.Collapsible.init(this.collapsible, {})
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowSizeChange)
-  }
 
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth })
-  }
   render() {
     return (
       <section id="skills">
-        <Helmet>
-            <html lang="fr" />
-            <meta charSet="utf-8" />
-            <meta httpEquiv="X-UA-Compatible" content="IE-edge,chrome=1" />
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <link rel="icon" type="image/png" href="/favicon.png" />
-          </Helmet>
         <div className="container view">
           <Heading title="Skills" />
           <ul
