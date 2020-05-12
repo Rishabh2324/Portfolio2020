@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import Heading from "../Reusable/heading"
-import M from "materialize-css"
 
 const filtercategory = items => {
   let holditems = items.map(items => {
