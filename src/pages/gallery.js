@@ -3,7 +3,6 @@ import Heading from "../components/Reusable/heading"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import M  from 'materialize-css'
 
 
 
@@ -16,6 +15,7 @@ class Achievments extends Component {
     }
   }
   async componentDidMount() {
+    const M = await import('materialize-css')
     M.Slider.init(this.slider, {})
   }
   render() {

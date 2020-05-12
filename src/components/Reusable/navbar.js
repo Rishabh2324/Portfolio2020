@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import boy from "../../images/back.jpg"
 import logo from "../../images/rishabh.jpeg"
 import { Link } from "@reach/router" 
-import M  from 'materialize-css'
+
 
 class Navbar extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Navbar extends Component {
     }
   }
   async componentDidMount() {
-
+    const M = await import('materialize-css')
     M.Sidenav.init(this.Navbar, {})
     M.Materialbox.init(this.materialboxed, {});
   }
